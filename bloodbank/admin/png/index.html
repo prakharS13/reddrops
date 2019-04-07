@@ -1,0 +1,173 @@
+<html>
+<head><title>Blood Bank | Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="icon" type="image/x-icon" href="png/favicon.ico">
+         <script>
+		    function openLoginNav() {
+             document.getElementById("myLogin").style.width = "400px";
+             
+             }
+
+            function openNav() {
+             document.getElementById("myRegister").style.width = "700px";
+             
+             }
+
+            function closeNav() {
+             document.getElementById("myRegister").style.width = "0";
+             document.body.style.backgroundColor = "white";
+             }
+			 function closeNav2() {
+             document.getElementById("myLogin").style.width = "0";
+             document.body.style.backgroundColor = "white";
+             }
+         </script>
+</head>
+<body>
+<div class="header">
+    <div class="navigation">
+	<span style="font-size:25px;font-weight:bold;margin-left:10px;color:black;">Blood Bank |</span> Do it once ..You'll feel good
+	<span id="register" onclick="openNav()">Register</span><span id="register" onclick="openLoginNav()">Login</span>
+	<div id="myRegister" class="register">
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	   <div id="login-form">
+	      
+		  <center><u>REGISTER</u><br>
+	       <img src="png/avatar.png"><br></center>
+		   <form method=post>
+		    Username: <input type="text" placeholder="Enter username" name="user" required><br>
+			Email :<input type="email" placeholder="Enter email" name="email" required><br>
+			Password:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="password" placeholder="Enter password" name="password" required><br>
+			Confirm Password:<input type="password" placeholder="Enter password" name="conpassword" required><br>
+			<input type="submit" name="submit" value="Register">
+			</form>
+
+			</div>
+    </div>
+	    <div id="myLogin" class="login">
+		   <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+		   <form action="login.php" method=post>
+		    Email :<input type="email" placeholder="Enter email" name="logemail" required><br>
+			Password:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="password" placeholder="Enter password" name="logpass" required><br>
+			<input type="submit" name="submit1" value="Login">
+			</form> 
+		</div>
+
+	</div>
+	<div class="nav-button"><a href="#">DONATE BLOOD</a>
+	</div>
+</div>
+ <span style="margin:20px 20px 0px 400px;padding :15px 15px 15px 15px;color:white;background-color:rgb(220,80,80);border:0px solid ;font-size:25px;float:left;cursor:pointer;">
+ Your Little Contribution Can Save Someone's life  </span>
+<div class="content">
+ 
+    <div class="main">
+	    <div class="sidebar">
+	      <ul>
+	       <li><a href="#">DONATE BLOOD</a></li>
+	        <li><a href="#">ORDER</a></li>
+	         <li><a href="#">OUR DONATORS</a></li>
+	          <li><a href="#">FIND NEARBY YOU</a></li>
+	           <li><a href="#">BENEFITS</a></li>
+	            <li><a href="#">OFFERS</a></li>
+	             <li><a href="#">ABOUT US</a></li>
+	              <li><a href="#">CONTACT</a></li>
+	               <li><a href="#">HELP</a></li>
+				   </ul>
+	        </div>
+	</div>
+	
+	<img src="png/donate.jpg" style="margin-top:40px;width:400px;border-radius:400px;border:1px solid black;">
+	<img src="png/idea.jpg" style="margin-top:20px;height:300px;width:700px;border-radius:400px;margin-left:50px;border:1px solid black;">
+	
+</div>
+<div class="footer">
+<br><br>
+<span style="font-size:35px;font-weight:bold;margin-left:30px;color:crimson;">Blood Bank |</span> Do it once ..You'll feel good
+<br><br>
+<hr style="height:1px;background-color:black;width:1300px;">
+<br>
+<span id="footer-nav"><a href="#">About us</a> <a href="#">Contact</a> <a href="#">Careers</a></span>
+<br><br>
+<hr style="height:1px;background-color:black;width:1300px;">
+<br>
+<span style="float:right;font-size:20px;margin-right:40px;">FOLLOW US ON : <a href="https://www.facebook.com"><img src="png/fb.png"></a>  <a href="https://www.instagram.com"><img src="png/insta.png"></a>  <a href="https://www.twitter.com"><img src="png/twitter.png"></a></span> 
+<marquee behavior="alternate" style="margin-top:40px;"><span style="font-size:18px;font-weight:bold;margin-left:10px;color:crimson;">&copy 2018 BloodBank.com</marquee> 
+</div>
+
+
+
+
+
+
+</body>
+ 
+<?php
+$server="localhost";
+$user="root";
+$db="bloodbank";
+$conn=new mysqli($server,$user,"",$db);
+
+if(!$conn)
+{ echo "error".$conn->connect_error;
+}
+else {
+  
+     if(isset($_POST["submit"]))
+	 {	 
+    	$username="'".$_POST["user"]."'";
+         $password="'".$_POST["password"]."'";
+           $email="'".$_POST["email"]."'";
+            $conpassword="'".$_POST["conpassword"]."'";
+		
+             if($password==$conpassword)
+      {	
+               $sql="insert into register (username,email,password,conpassword) values($username,$email,$password,$conpassword)";
+              if($conn->query($sql)==true)
+                 {
+	                   echo "<script>alert('You are registered successfully')</script>";
+					   
+                   }
+             else {
+	               echo $conn->error;
+                   }
+              $conn->close();
+       }
+            else 
+          {
+	           echo "<script>alert('password and confirm password should be equal')</script> ";
+            }
+	 }
+	
+	if(isset($_POST["submit1"]))
+	   {
+		   $login_email="'".$_POST["logemail"]."'";
+		   $login_pass="'".$_POST["logpass"]."'";
+		    $sql1="select email,password from register where email=$login_email and password=$login_pass";
+			$result=$conn->query($sql1);
+	       if($result->num_rows>0)
+	       {  echo "<script>alert('welcome user')</script>";
+		       //session_start();
+		         $row=$result->fetch_assoc();
+		       $_SESSION["name"]=$row["email"];
+		         //header("location:login.php"); 
+		  
+	         }
+	       else 
+	    {
+		  echo "<script>alert('You are not registered')</script>";
+		}
+		
+		$conn->close();
+		
+		
+		   
+		   
+	   }
+	
+}		
+			
+
+?>
+</html>

@@ -1,0 +1,251 @@
+body{
+	margin:0px;
+	background-color:lightgrey; 
+	transition: background-color .5s;
+	
+}
+.header{
+	height:500px;
+	width:1360px;
+	background-image:url("png/blood.jpg");
+}
+.navigation{
+	height:50px;
+	width:1360px;
+	background-color:rgb(220,80,80);
+	padding-top:20px;
+	font-size:22px;
+	position:fixed;
+	color:white;	
+	overflow:hidden;
+
+}
+#register
+{
+	border:1.5px solid black;
+	border-radius:20px;
+	text-decoration:none;
+	color:white;
+	padding:5px 10px 5px 10px;
+	margin-right:20px;
+	font-size:25px;
+	float:right;
+	cursor:pointer;
+	
+}
+#register:hover
+{   border:1.5px solid white;
+	background-color:rgb(200,60,60);
+}
+.register{
+    height: 450px;
+    width: 0;
+    position: fixed;
+    top: 100px;
+    left: 300px;
+    background-color:darkslategray ;
+    overflow-x: hidden;
+    transition: 0.2s;
+    padding-top: 60px;
+	color:rgb(220,80,80);
+	
+}
+.register .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 50px;
+    margin-left: 50px;
+	text-decoration:none;
+	color:rgb(220,80,80);
+}
+.login{
+	height: 200px;
+    width: 0;
+    position: fixed;
+    top: 70px;
+    left: 950px;
+    background-color:darkslategray ;
+    overflow: hidden;
+    transition: 0.2s;
+    padding-top: 60px;
+	color:rgb(220,80,80);	
+  
+	}
+.login .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 50px;
+    margin-left: 50px;
+	text-decoration:none;
+	color:rgb(220,80,80);
+}
+#login-form form{
+   
+	padding-left:170px;
+	margin-top:50px;
+}
+input[type="text"]{
+	margin-left:90px;
+	margin-top:10px;
+	border-radius:20px;
+	height:28px;
+	width:200px;
+}
+select{
+	margin-left:90px;
+	margin-top:10px;
+	border-radius:20px;
+	height:28px;
+	width:200px;
+} 
+input[type="email"]{
+	margin-left:130px;
+	margin-top:10px;
+	border-radius:20px;
+	height:28px;
+	width:200px;
+}
+input[type="password"]{
+	margin-left:20px;
+	margin-top:10px;
+	border-radius:20px;
+	height:28px;
+	width:200px;
+}
+input[type="submit"]{
+	margin:40px 0px 0px 80px;
+	border-radius:20px;
+	height:28px;
+	width:200px;
+	color:white;
+	cursor:pointer;
+	background-color:rgb(220,80,80);
+}
+input[type="submit"]:hover{
+	background-color:rgb(250,60,60);
+}
+
+.nav-button{
+	
+	padding:250px 200px 250px 550px;	
+}
+.nav-button a{
+	text-decoration:none;
+	color:white;
+	font-size:30px;
+	border:2px solid black;
+	border-radius:15px;
+	padding:10px 20px 10px 20px;
+	background-color:rgb(220,80,80);
+}
+.nav-button a:hover{
+	background-color:rgb(200,60,60);
+	border:2px solid white;
+}
+.nav-button a:active{
+	border:2px solid red;
+}
+
+.content{
+	height:1000px;
+	width:1360px;
+	background-color:lightgrey;
+	padding-top:200px;
+	padding-left:40px;
+	
+}
+
+.main{ /* main content of whole page */
+	height:500px;
+    float:left;
+	width:950px;
+	font-size:15px;
+    background-color:lightgrey;
+	border:0.5px solid gray;
+	box-shadow:4px 5px #888888;
+}
+.main form{
+	float:left;
+	margin:60px 0px 0px 200px;
+	font-size:20px;
+}
+.main input[type="file"]
+{
+
+	margin-left:100px;
+}
+.main select
+{
+	margin:20px 0px 0px 60px;
+	width:200px;
+	height:28px;
+}
+
+.main input[type="text"]
+{
+    border-radius:20px;
+	margin:20px 0px 0px 60px;
+	box-shadow:1px 1px #888888;
+	
+}
+.main textarea {
+	margin:20px 0px 0px 100px;
+	
+}
+.main h2,h1,h3{
+	color:crimson;
+}
+.sidebar{
+	height:600px;
+        width:250px;
+        float:right;
+	background-color:darkslategray;
+	margin-right:100px;
+	border-radius:10px;
+    
+}
+
+.sidebar li{
+	list-style:none;
+	padding-bottom:20px;	
+	font-size:25px;
+}
+.sidebar a{
+	text-decoration:none;
+	color:white;
+	
+}
+.sidebar a:hover{
+	
+	border-bottom:5px solid crimson;
+
+}
+*{
+box-sizing:border-box;
+}
+.slideshow{
+height:400px;
+width:1000px;
+
+}
+
+
+
+.footer{
+	height:200px;
+	width:1360px;
+	background-color:black;
+	border-bottom:10px solid red;
+	color:white;
+	font-size:15px;
+}
+#footer-nav a{
+	text-decoration:none;
+	border:1px solid white;
+	border-radius :20px;
+	padding:10px 15px 10px 15px;
+	color:crimson;
+	margin-left:30px;
+}
